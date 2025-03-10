@@ -42,7 +42,10 @@ jobs:
           cache: 'pnpm'
 
       - name: Execute pnpm
-        run: pnpm install
+        run: |
+          npm install -g corepack@latest
+          corepack enable
+          pnpm install
 
       - name: Run linter
         run: pnpm lint:check
