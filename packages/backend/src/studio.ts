@@ -65,6 +65,7 @@ import { LlamaStackManager } from './managers/llama-stack/llamaStackManager';
 import { OpenVINO } from './workers/provider/OpenVINO';
 import { McpServerManager } from './managers/playground/McpServerManager';
 import os from 'node:os';
+import { VLLM } from './workers/provider/VLLM';
 
 export class Studio {
   readonly #extensionContext: ExtensionContext;
@@ -291,6 +292,9 @@ export class Studio {
         ),
       );
     }
+    this.#extensionContext.subscriptions.push(
+      this.#inferenceProviderRegistry.register(new VLLM(this.#taskRegistry, this.#podmanConnection)),
+    );
 
     /**
      * The inference manager create, stop, manage Inference servers
