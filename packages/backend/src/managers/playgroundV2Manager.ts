@@ -260,7 +260,7 @@ export class PlaygroundV2Manager implements Disposable {
       );
     };
     streamProcessor
-      .stream(model, tools, options)
+      .stream(model, tools, server.type === InferenceType.VLLM ? {} : options)
       .consumeStream()
       .then(
         () => {
