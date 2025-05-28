@@ -69,7 +69,6 @@ jobs:
 
       - name: Build manifest and images
         run: |
-          podman manifest rm -i quay.io/podman-ai-lab/llama-stack-playground:${{ github.event.inputs.version }}
           podman manifest create quay.io/podman-ai-lab/llama-stack-playground:${{ github.event.inputs.version }}
           podman build --platform linux/amd64,linux/arm64 llama_stack/distribution/ui --manifest quay.io/podman-ai-lab/llama-stack-playground:${{ github.event.inputs.version }}
 
