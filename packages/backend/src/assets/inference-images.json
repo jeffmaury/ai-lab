@@ -10,6 +10,6 @@
     "default": "quay.io/ramalama/openvino@sha256:e026ecbdf6ae222a193badad5b0dd2253362e366e22c8b402f5a492803b10fd5"
   },
   "vllm": {
-    "default": "quay.io/podman-ai-lab/vllm@sha256:8a2d2894835bcb560b7c76b0c0f0e8d19ef21de5ad0c9508809ba73cfe349780"
+    "default": "public.ecr.aws/q9t5s3a7/vllm-cpu-release-repo:latest"
   }
 }
